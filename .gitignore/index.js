@@ -20,7 +20,11 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "Napidou"){
-        message.channel.send("Voici la chaîne de [Napidou] (https://www.youtube.com/channel/UCp9Ad5p8AGpPzoXZCCLjeyQ/videos?view_as=subscriber)");
+        message.channel.send("Voici la chaîne de [Napidou](https://www.youtube.com/channel/UCp9Ad5p8AGpPzoXZCCLjeyQ/videos?view_as=subscriber)");
+    }
+
+    if (message.content === prefix + "Website"){
+        message.channel.send("Voici le site [VRG BOT Official Development WebSite](https://vrg-bot-official-development-website-76.webself.net/accueil)");
     }
 
     if (message.content === "Salut"){
@@ -47,9 +51,22 @@ bot.on('message', message => {
             .addField("*JDQ","Affiche les répliques que je peux dire", true)
             .addField("*Creator","Affiche le pseudo de mon créateur", true)
             .addField("*Napidou","Envoie le lien de la chaîne de Napidou !", true)
+            .addField("*Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
-    }
+    });
+
+    bot.on("guildMemberAdd", member => {
+        member.guild.channels.find("name", "rue-du-parlement").send(`Bienvenue à toi ${member} sur Vin Rage Gaming`)
+    })
     
+    bot.on("guildMemberRemove", member => {
+        member.guild.channels.find("name", "rue-du-parlement").send(`Et voilà, ${member} est parti !`)
+    })
+
+    bot.on('guildMemberAdd', member => {
+        var role = member.guild.roles.find('name', 'Nouveaux');
+        member.addRole(role)
+    })
 });
