@@ -55,18 +55,4 @@ bot.on('message', message => {
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
-    }
-
-    bot.on("guildMemberAdd", member => {
-        member.guild.channels.find("name", "rue-du-parlement").send(`Bienvenue à toi ${member} sur Vin Rage Gaming`)
-    })
-    
-    bot.on("guildMemberRemove", member => {
-        member.guild.channels.find("name", "rue-du-parlement").send(`Et voilà, ${member} est parti !`)
-    })
-
-    bot.on('guildMemberAdd', member => {
-        var role = member.guild.roles.find('name', 'Nouveaux');
-        member.addRole(role)
-    })
 });
