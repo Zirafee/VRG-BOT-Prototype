@@ -58,15 +58,15 @@ bot.on('message', message => {
     }
 
     bot.on("guildMemberAdd", member => {
-        member.guild.channels.get("name", "rue-du-parlement").send(`Bienvenue à toi ${member} sur Vin Rage Gaming`)
-    })
+        member.guild.channels.find("name", "rue-du-parlement").send(`Bienvenue à toi ${member} sur Vin Rage Gaming`)
+    });
     
     bot.on("guildMemberRemove", member => {
-        member.guild.channels.get("name", "rue-du-parlement").send(`Et voilà, ${member} est parti !`)
-    })
+        member.guild.channels.find("name", "rue-du-parlement").send(`Et voilà, ${member} est parti !`)
+    });
 
     bot.on('guildMemberAdd', member => {
-        var role = member.guild.roles.get('name', 'Nouveaux');
+        var role = member.guild.roles.find('name', 'Nouveaux');
         member.addRole(role)
-    })
+    });
 });
