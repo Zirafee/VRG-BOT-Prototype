@@ -20,7 +20,7 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "Napidou"){
-        message.channel.send("Voici la chaîne de [Napidou](https://www.youtube.com/channel/UCp9Ad5p8AGpPzoXZCCLjeyQ/videos?view_as=subscriber)");
+        message.channel.send("Voici la chaîne de [Napidou] (https://www.youtube.com/channel/UCp9Ad5p8AGpPzoXZCCLjeyQ/videos?view_as=subscriber)");
     }
 
     if (message.content === "Salut"){
