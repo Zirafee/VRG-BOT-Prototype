@@ -55,4 +55,6 @@ bot.on('message', message => {
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
+    }
+
 });
