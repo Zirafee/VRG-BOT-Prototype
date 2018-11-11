@@ -30,8 +30,7 @@ bot.on('message', message => {
             let args = message.content.split(" ").slice(1);
             let thingToEcho = args.join(" ")
             var embed = new Discord.RichEmbed()
-                .setTitle("Sondage")
-                .setDescription("Voici un sondage")
+                .setDescription("Sondage")
                 .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
                 .setColor("0xB40431")
                 .setTimestamp()
@@ -56,6 +55,13 @@ bot.on('message', message => {
     if (message.content === prefix + "Napidou"){
         message.channel.send("Voici la chaîne de [Napidou](https://www.youtube.com/channel/UCp9Ad5p8AGpPzoXZCCLjeyQ/videos?view_as=subscriber)");
     }
+
+    if (message.content === prefix + "CFUS"){
+        if(message.author.id == "449251922612846593"){
+            message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande ~*Sondage~ puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
+        }else{
+            return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
+    }}
 
     if (message.content === prefix + "Website"){
         message.channel.send("Voici le site [VRG BOT Official Development WebSite](https://vrg-bot-official-development-website-76.webself.net/accueil)");
@@ -86,6 +92,8 @@ bot.on('message', message => {
             .addField("*Creator","Affiche le pseudo de mon créateur", true)
             .addField("*Napidou","Envoie le lien de la chaîne de Napidou !", true)
             .addField("*Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
+            .addField("*Sondage","Cette commande envoie un sondage dans Rue de la presse mais ATTENTION, seul Napidou, Hioups et Freez peuvent envoyer des sondages.", true)
+            .addField("*CFUS","Cette commande explique comment faire un sondage mais ATTENTION elle est seulement réalisable par Napidou, Hioups et Freez.", true)
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
