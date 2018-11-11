@@ -67,6 +67,20 @@ bot.on('message', message => {
         message.channel.send("Voici le site [VRG BOT Official Development WebSite](https://vrg-bot-official-development-website-76.webself.net/accueil)");
     }
 
+    if (message.content.startsWith(prefix + "Admin")){
+        if(message.author.id == "330077877599207445"){
+            var embed = new Discord.RichEmbed()
+                .setTitle("Commandes des Admins")
+                .setDescription("Voici les commandes réalisables par les admins")
+                .addField("*CFUS","Explique comment créer un sondage", true)
+                .addField("*Sondage","Permet de créer un sondage dans : Rue de la presse", true)
+                .setColor("0xB40431")
+                .setFooter("Les commandes ci-dessus sont réalisables par les admins")
+            message.guild.channels.get('421678453050441738').sendEmbed(embed)
+        }else{
+            return message.reply("Tu n'as pas la permission de voir les commandes des Admins, désolé")
+    }}
+
     if (message.content === "Salut"){
         message.reply("Salut moi c'est VRG BOT");
     }
@@ -92,8 +106,7 @@ bot.on('message', message => {
             .addField("*Creator","Affiche le pseudo de mon créateur", true)
             .addField("*Napidou","Envoie le lien de la chaîne de Napidou !", true)
             .addField("*Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
-            .addField("*Sondage","Cette commande envoie un sondage dans Rue de la presse mais ATTENTION, seul Napidou peut envoyer des sondages.", true)
-            .addField("*CFUS","Cette commande explique comment faire un sondage mais ATTENTION elle est seulement réalisable par Napidou", true)
+            .addField("*Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.")
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
