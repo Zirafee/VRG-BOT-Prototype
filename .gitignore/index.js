@@ -44,6 +44,44 @@ bot.on('message', message => {
                 return message.reply("Tu n'as pas la permission, désolé")
     }}
 
+    if (message.content.startsWith(prefix + "Sondage")){
+        if(message.author.id == "330077877599207445"){
+            let args = message.content.split(" ").slice(1);
+            let thingToEcho = args.join(" ")
+            var embed = new Discord.RichEmbed()
+                .setDescription("Sondage")
+                .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
+                .setColor("0xB40431")
+                .setTimestamp()
+            message.guild.channels.get('443750430368071680').sendEmbed(embed)
+            .then(function (message){
+                message.react("✓")
+                message.react("✗")
+            }).catch(function() {
+            });
+            }else{
+                return message.reply("Tu n'as pas la permission, désolé")
+    }}
+
+    if (message.content.startsWith(prefix + "Sondage")){
+        if(message.author.id == "450964471226171392"){
+            let args = message.content.split(" ").slice(1);
+            let thingToEcho = args.join(" ")
+            var embed = new Discord.RichEmbed()
+                .setDescription("Sondage")
+                .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
+                .setColor("0xB40431")
+                .setTimestamp()
+            message.guild.channels.get('443750430368071680').sendEmbed(embed)
+            .then(function (message){
+                message.react("✓")
+                message.react("✗")
+            }).catch(function() {
+            });
+            }else{
+                return message.reply("Tu n'as pas la permission, désolé")
+    }}
+
     if (message.content === prefix + "JDQ"){
         message.channel.send("Voici ce à quoi je peux répondre: \n -Salut \n -salut \n -yop \n Evidemment ily aura plus de répliques dans le futur et vous pouvez m'aider à en avoir plus en proposant vos idées dans Rue de la remarque !");
     }
@@ -58,7 +96,21 @@ bot.on('message', message => {
 
     if (message.content === prefix + "CFUS"){
         if(message.author.id == "449251922612846593"){
-            message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande ~*Sondage~ puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
+            message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande Sondage avec l'étoile puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
+        }else{
+            return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
+    }}
+
+    if (message.content === prefix + "CFUS"){
+        if(message.author.id == "330077877599207445"){
+            message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande Sondage avec l'étoile puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
+        }else{
+            return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
+    }}
+
+    if (message.content === prefix + "CFUS"){
+        if(message.author.id == "450964471226171392"){
+            message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande Sondage avec l'étoile puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
         }else{
             return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
     }}
