@@ -26,45 +26,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(prefix + "Sondage")){
-        if(message.author.id == "449251922612846593"){
-            let args = message.content.split(" ").slice(1);
-            let thingToEcho = args.join(" ")
-            var embed = new Discord.RichEmbed()
-                .setDescription("Sondage")
-                .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
-                .setColor("0xB40431")
-                .setTimestamp()
-            message.guild.channels.get('443750430368071680').sendEmbed(embed)
-            .then(function (message){
-                message.react("✓")
-                message.react("✗")
-            }).catch(function() {
-            });
-            }else{
-                return message.reply("Tu n'as pas la permission, désolé")
-    }}
-
-    if (message.content.startsWith(prefix + "Sondage")){
         if(message.author.id == "330077877599207445"){
-            let args = message.content.split(" ").slice(1);
-            let thingToEcho = args.join(" ")
-            var embed = new Discord.RichEmbed()
-                .setDescription("Sondage")
-                .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
-                .setColor("0xB40431")
-                .setTimestamp()
-            message.guild.channels.get('443750430368071680').sendEmbed(embed)
-            .then(function (message){
-                message.react("✓")
-                message.react("✗")
-            }).catch(function() {
-            });
-            }else{
-                return message.reply("Tu n'as pas la permission, désolé")
-    }}
-
-    if (message.content.startsWith(prefix + "Sondage")){
-        if(message.author.id == "450964471226171392"){
             let args = message.content.split(" ").slice(1);
             let thingToEcho = args.join(" ")
             var embed = new Discord.RichEmbed()
@@ -95,21 +57,7 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "CFUS"){
-        if(message.author.id == "449251922612846593"){
-            message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande Sondage avec l'étoile puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
-        }else{
-            return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
-    }}
-
-    if (message.content === prefix + "CFUS"){
         if(message.author.id == "330077877599207445"){
-            message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande Sondage avec l'étoile puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
-        }else{
-            return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
-    }}
-
-    if (message.content === prefix + "CFUS"){
-        if(message.author.id == "450964471226171392"){
             message.channel.send("Pour faire une sondage, c'est simple : Il faut écrire la commande Sondage avec l'étoile puis écrire la question du sondage, exemple : ~*Sondage Qui aime les saucisses ?~ Et voilà !");
         }else{
             return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
@@ -128,7 +76,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "yop"){
-        message.reply("YoukYouk comme CASSOS !");
+        message.reply("YoukYouk comme Dyno !");
     }
 
     if (message.content === "bonsoir"){
@@ -144,8 +92,8 @@ bot.on('message', message => {
             .addField("*Creator","Affiche le pseudo de mon créateur", true)
             .addField("*Napidou","Envoie le lien de la chaîne de Napidou !", true)
             .addField("*Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
-            .addField("*Sondage","Cette commande envoie un sondage dans Rue de la presse mais ATTENTION, seul Napidou, Hioups et Freez peuvent envoyer des sondages.", true)
-            .addField("*CFUS","Cette commande explique comment faire un sondage mais ATTENTION elle est seulement réalisable par Napidou, Hioups et Freez.", true)
+            .addField("*Sondage","Cette commande envoie un sondage dans Rue de la presse mais ATTENTION, seul Napidou peut envoyer des sondages.", true)
+            .addField("*CFUS","Cette commande explique comment faire un sondage mais ATTENTION elle est seulement réalisable par Napidou", true)
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
