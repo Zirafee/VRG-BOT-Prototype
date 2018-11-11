@@ -11,6 +11,40 @@ bot.login(process.env.TOKEN);
 
 
 bot.on('message', message => {
+
+    if (message.content === prefix + "Infodiscord"){
+        var embed = new Discord.RichEmbed()
+            .setTitle("Info Discord")
+            .setDescription("Voici les informations Discord")
+            .addField("Nom Du Discord", message.guild.name)
+            .addField("Crée le", message.guild.createdAt)
+            .addField("Tu as rejoins le", message.member.joinedAt)
+            .addField("Utilisateurs sur le Discord", message.guild.memberCount)
+            .setColor("0xB40431")
+        message.channel.sendEmbed(embed)
+
+    }
+
+    if (message.content.startsWith(prefix + "Sondage")){
+        if(message.author.id == "449251922612846593"){
+            let args = message.content.split(" ").slice(1);
+            let thingToEcho = args.join(" ")
+            var embed = new Discord.RichEmbed()
+                .setTitle("Sondage")
+                .setDescription("Voici un sondage")
+                .addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
+                .setColor("0xB40431")
+                .setTimestamp()
+            message.guild.channels.get('443750430368071680').sendEmbed(embed)
+            .then(function (message){
+                message.react("✓")
+                message.react("✗")
+            }).catch(function() {
+            });
+            }else{
+                return message.reply("Tu n'as pas la permission, désolé")
+    }}
+
     if (message.content === prefix + "JDQ"){
         message.channel.send("Voici ce à quoi je peux répondre: \n -Salut \n -salut \n -yop \n Evidemment ily aura plus de répliques dans le futur et vous pouvez m'aider à en avoir plus en proposant vos idées dans Rue de la remarque !");
     }
