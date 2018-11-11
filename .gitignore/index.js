@@ -44,6 +44,26 @@ bot.on('message', message => {
                 return message.reply("Tu n'as pas la permission, désolé")
     }}
 
+    if (message.content.startsWith(prefix + "Sondage3")){
+        if(message.author.id == "330077877599207445"){
+            let args = message.content.split(" ").slice(1);
+            let thingToEcho = args.join(" ")
+            var embed = new Discord.RichEmbed()
+                .setDescription("Sondage")
+                .addField(thingToEcho, "Répondre avec :one: , :two: ou :three:")
+                .setColor("0xB40431")
+                .setTimestamp()
+            message.guild.channels.get('443750430368071680').sendEmbed(embed)
+            .then(function (message){
+                message.react(":one:")
+                message.react(":two:")
+                message.react(":three:")
+            }).catch(function() {
+            });
+            }else{
+                return message.reply("Tu n'as pas la permission, désolé")
+    }}
+
     if (message.content === prefix + "JDQ"){
         message.channel.send("Voici ce à quoi je peux répondre: \n -Salut \n -salut \n -yop \n Evidemment ily aura plus de répliques dans le futur et vous pouvez m'aider à en avoir plus en proposant vos idées dans Rue de la remarque !");
     }
@@ -74,6 +94,7 @@ bot.on('message', message => {
                 .setDescription("Voici les commandes réalisables par les admins")
                 .addField("*CFUS","Explique comment créer un sondage", true)
                 .addField("*Sondage","Permet de créer un sondage dans : Rue de la presse", true)
+                .addField("*Sondage3","Permet de créer un sondage avec 3 possibilitées de réponse.", true)
                 .setColor("0xB40431")
                 .setFooter("Les commandes ci-dessus sont réalisables par les admins")
             message.guild.channels.get('421678453050441738').sendEmbed(embed)
