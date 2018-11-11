@@ -128,7 +128,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "yop"){
-        message.reply("YoukYouk comme Dyno !");
+        message.reply("YoukYouk comme CASSOS !");
     }
 
     if (message.content === "bonsoir"){
