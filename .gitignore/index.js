@@ -207,7 +207,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "napidou ?"){
-        message.channel.send("/tts Le Dirigeant Napidou est demandé à l'accueil");
+        message.channel.send("Le Dirigeant Napidou est demandé à l'accueil");
     }
 
     if (message.content === "aie"){
