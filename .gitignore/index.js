@@ -65,7 +65,7 @@ bot.on('message', message => {
     }}
 
     if (message.content === prefix + "JDQ"){
-        message.channel.send("Voici ce à quoi je peux répondre: \n -Salut       -salut \n -yop       -black squad \n -coucou       -youki \n -sava       -ca va \n -ca va?       -sava? \n -hey       -hello \n -cava       -re \n -vocal       -voc \n -xxrom       -vw974 \n -pk       -tu joues \n -pomme       -cc \n -tg       -qui bs ? \n -qui bs       -ya quelqu'un ? \n -ui       -moi \n -napidou ?       -aie \n -qui unturned?       -yop qui unturned? \n -k       -ohw \n -oh ok       -toi tg \n -toi tg ptn       -toi ftg \n -toi ftg ptn       -ptn \n -je mange       -ok je mange \n -bon jy go       -salut VRG \n -youkouk       -YoukYouk \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
+        message.channel.send("Voici ce à quoi je peux répondre: \n -Salut    /   -salut \n -yop    /   -black squad \n -coucou    /   -youki \n -sava    /   -ca va \n -ca va?    /   -sava? \n -hey   /    -hello \n -cava   /    -re \n -vocal    /   -voc \n -xxrom    /   -vw974 \n -pk    /   -tu joues \n -pomme    /   -cc \n -tg    /   -qui bs ? \n -qui bs    /   -ya quelqu'un ? \n -ui    /   -moi \n -napidou ?    /   -aie \n -qui unturned?    /   -yop qui unturned? \n -k    /   -ohw \n -oh ok    /   -toi tg \n -toi tg ptn     /  -toi ftg \n -toi ftg ptn    /   -ptn \n -je mange    /   -ok je mange \n -bon jy go    /   -salut VRG \n -youkouk    /   -YoukYouk \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
     }
 
     if (message.content === prefix + "Creator"){
