@@ -179,7 +179,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "cc"){
-        message.reply(", slt");
+        message.reply(" slt");
     }
 
     if (message.content === "tg"){
@@ -187,11 +187,11 @@ bot.on('message', message => {
     }
 
     if (message.content === "qui bs ?"){
-        message.reply(", j'avoue ouais les gars qui bs ?");
+        message.reply(" j'avoue ouais les gars qui bs ?");
     }
 
     if (message.content === "qui bs"){
-        message.reply(", t'as raisons là qui bs ?");
+        message.reply(" t'as raisons là qui bs ?");
     }
 
     if (message.content === "ya quelqu'un ?"){
@@ -263,7 +263,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "bon jy go"){
-        message.reply(", ok on s'reverra plus tard !");
+        message.reply(" ok on s'reverra plus tard !");
     }
 
     if (message.content === "je deco"){
