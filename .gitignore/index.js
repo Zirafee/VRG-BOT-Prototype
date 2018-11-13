@@ -319,5 +319,13 @@ bot.on('message', message => {
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
     }
+})
+
+bot.on('guildMemberAdd', member => {
+    bot.channels.get('374964719884435469').send(`Bienvenue à toi ${member} mais tu peux retirer tes chaussures stp ?`);
+})
+
+bot.on('guildMemberRemove', member => {
+    bot.channels.get('374964719884435469').send(`Bah voilà ${member} est parti, moi je l'aimais bien mais bon ...`)
 
 });
