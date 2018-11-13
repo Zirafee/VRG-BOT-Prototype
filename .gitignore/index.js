@@ -103,20 +103,207 @@ bot.on('message', message => {
     }}
 
     if (message.content === "Salut"){
-        message.reply("Salut moi c'est VRG BOT");
+        message.channel.send("Salut moi c'est VRG BOT");
+    }
+
+    if (message.content === "black squad"){
+        message.channel.send("Trop bon jeu :D");
+    }
+
+    if (message.content === "coucou"){
+        message.channel.send("Coucou mon p'tit oréo (même si c'est dégueu)");
+    }
+
+    if (message.content === "youki"){
+        message.channel.send("YOUKYOUKYOUKYOUKYOUK");
+    }
+
+    if (message.content === "sava"){
+        message.channel.send("Ta gueule et mange !");
+    }
+
+    if (message.content === "ca va"){
+        message.channel.send("Oh ! Ta gueule et mange !");
+    }
+
+    if (message.content === "ca va?"){
+        message.channel.send("Mais ta gueule et mange !");
+    }
+
+    if (message.content === "sava?"){
+        message.channel.send("Ta gueule et mange !");
+    }
+
+    if (message.content === "hey"){
+        message.channel.send("ho");
+    }
+
+    if (message.content === "hello"){
+        message.channel.send("bye");
+    }
+
+    if (message.content === "cava"){
+        message.channel.send("Ta gueule et mange !");
+    }
+
+    if (message.content === "re"){
+        message.channel.send("Rebonsoère mon poulet");
+    }
+
+    if (message.content === "vocal"){
+        message.channel.send("Ouais allez-y vous m'soulez");
+    }
+
+    if (message.content === "voc"){
+        message.channel.send("Ouais allez-y vous m'soulez");
+    }
+
+    if (message.content === "xxrom"){
+        message.channel.send("Le syndrome ou l'autre ?");
+    }
+
+    if (message.content === "vw974"){
+        message.channel.send("O_O");
+    }
+
+    if (message.content === "pk"){
+        message.channel.send("A ton avis tête de lard");
+    }
+
+    if (message.content === "tu joues"){
+        message.channel.send("Laisse les pros trkl");
+    }
+
+    if (message.content === "pomme"){
+        message.channel.send("Ok ça marchais avec CASSOS mais pas moi ! è-é");
+    }
+
+    if (message.content === "cc"){
+        message.reply(", slt");
+    }
+
+    if (message.content === "tg"){
+        message.channel.send("Nan mais le respect il est ou ?");
+    }
+
+    if (message.content === "qui bs ?"){
+        message.reply(", j'avoue ouais les gars qui bs ?");
+    }
+
+    if (message.content === "qui bs"){
+        message.reply(", t'as raisons là qui bs ?");
+    }
+
+    if (message.content === "ya quelqu'un ?"){
+        message.channel.send("Nan je crois je suis tout seul, c'est triste");
+    }
+
+    if (message.content === "ui"){
+        message.channel.send("Effectivement");
+    }
+
+    if (message.content === "moi"){
+        message.channel.send("Moi aussi");
+    }
+
+    if (message.content === "napidou ?"){
+        message.channel.send("/tts Le Dirigeant Napidou est demandé à l'accueil");
+    }
+
+    if (message.content === "aie"){
+        message.channel.send("Ouch, nan j'ai rien senti en fait");
+    }
+
+    if (message.content === "qui unturned?"){
+        message.reply("veut jouer à Unturned les gars go le rejoindre !");
+    }
+
+    if (message.content === "yop qui unturned?"){
+        message.channel.send("Alors moi je veux bien mais je veux être un zombie");
+    }
+
+    if (message.content === "k"){
+        message.channel.send("Après le K y'a le L si tu cherches ");
+    }
+
+    if (message.content === "ohw"){
+        message.channel.send("Ohw");
+    }
+
+    if (message.content === "oh ok"){
+        message.channel.send("Je comprends ... En fait non");
+    }
+
+    if (message.content === "toi tg"){
+        message.channel.send("Mal élévé va !");
+    }
+
+    if (message.content === "toi tg ptn"){
+        message.channel.send("Forceur !");
+    }
+
+    if (message.content === "toi ftg"){
+        message.channel.send("Je te permet pas sale ... fromage");
+    }
+
+    if (message.content === "toi ftg ptn"){
+        message.channel.send("Vas-y j'arrête c'est chiant");
+    }
+
+    if (message.content === "ptn"){
+        message.channel.send("Oh la vulgarité !");
+    }
+
+    if (message.content === "je mange"){
+        message.channel.send("Tu vas me donner faim !");
+    }
+
+    if (message.content === "ok je mange"){
+        message.channel.send("C'est bien, nickel");
+    }
+
+    if (message.content === "bon jy go"){
+        message.reply(", ok on s'reverra plus tard !");
+    }
+
+    if (message.content === "je deco"){
+        message.channel.send("Ok ok au moins tu dis au revoir, à plus sinon !");
+    }
+
+    if (message.content === "voilà"){
+        message.channel.send("Voilà voili voilou");
+    }
+
+    if (message.content === "salut VRG"){
+        message.channel.send("Oh tiens tu m'appelles par mon nom ? :)");
+    }
+
+    if (message.content === "youkyouk"){
+        message.channel.send("Alors toi tu le dis pas en fait");
+    }
+
+    if (message.content === "YoukYouk"){
+        message.channel.send("Nan mais toi tu le dis pas par contre");
     }
 
     if (message.content === "salut"){
-        message.reply("Tu sais je déteste quand on ne met pas de majuscules ! Mais sinon salut");
+        message.channel.send("Tu sais je déteste quand on ne met pas de majuscules ! Mais sinon salut");
     }
 
     if (message.content === "yop"){
-        message.reply("YoukYouk comme Dyno !");
+        message.channel.send("YoukYouk");
     }
 
     if (message.content === "bonsoir"){
         message.reply("salut ! Sinon qui bs avec toi ?");
     }
+
+    if (message.content === "Bon VRG, j'arrête de t'améliorer pour aujourd'hui, à plus !"){
+        if(message.author.id == "449251922612846593"){
+            message.channel.send("Ok Freez c'était cool mais oublie pas de te laver les mains avant de me toucher la prochaine fois elles étaient sales ! Sinon à plus !");
+        }else{
+            return message.reply("Nan mais c'est pas toi qui me code... ;-;")
+    }}
 
     if (message.content === prefix + "Help"){
         var embed = new Discord.RichEmbed()
