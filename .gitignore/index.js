@@ -65,7 +65,7 @@ bot.on('message', message => {
     }}
 
     if (message.content === prefix + "JDQ"){
-        message.channel.send("Voici ce à quoi je peux répondre: \n -Salut    /   -salut \n -yop    /   -black squad \n -coucou    /   -youki \n -sava    /   -ca va \n -ca va?    /   -sava? \n -hey   /    -hello \n -cava   /    -re \n -vocal    /   -voc \n -xxrom    /   -vw974 \n -pk    /   -tu joues \n -pomme    /   -cc \n -tg    /   -qui bs ? \n -qui bs    /   -ya quelqu'un ? \n -ui    /   -moi \n -napidou ?    /   -aie \n -qui unturned?    /   -yop qui unturned? \n -k    /   -ohw \n -oh ok    /   -toi tg \n -toi tg ptn     /  -toi ftg \n -toi ftg ptn    /   -ptn \n -je mange    /   -ok je mange \n -bon jy go    /   -salut VRG \n -youkouk    /   -YoukYouk \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
+        message.channel.send("Voici ce à quoi je peux répondre: \n -Salut -salut \n -yop -black squad \n -coucou -youki \n -sava -ca va \n -ca va? -sava? \n -hey -hello \n -cava -re \n -vocal -voc \n -xxrom -vw974 \n -pk -tu joues \n -pomme -cc \n -tg -qui bs ? \n -qui bs -ya quelqu'un ? \n -ui -moi \n -napidou ? -aie \n -qui unturned? -yop qui unturned? \n -k -ohw \n -oh ok -toi tg \n -toi tg ptn -toi ftg \n -toi ftg ptn -ptn \n -je mange -ok je mange \n -bon jy go -salut VRG \n -youkouk -YoukYouk \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
     }
 
     if (message.content === prefix + "Creator"){
@@ -73,7 +73,11 @@ bot.on('message', message => {
     }
 
     if (message.content === prefix + "Napidou"){
-        message.channel.send("Voici la chaîne de [Napidou](https://www.youtube.com/channel/UCp9Ad5p8AGpPzoXZCCLjeyQ/videos?view_as=subscriber)");
+        message.channel.send("Voici la chaîne de [Napidou](https://www.youtube.com/channel/UCp9Ad5p8AGpPzoXZCCLjeyQ)");
+    }
+
+    if (message.content === prefix + "Freez"){
+        message.channel.send("Voici la chaîne de mon créateur (https://www.youtube.com/channel/UCyaQOwSc7pPtftMsizczyFw)");
     }
 
     if (message.content === prefix + "CFUS"){
@@ -87,14 +91,19 @@ bot.on('message', message => {
         message.channel.send("Voici le site [VRG BOT Official Development WebSite](https://vrg-bot-official-development-website-76.webself.net/accueil)");
     }
 
+    if (message.content === prefix + "JDQS"){
+        message.channel.send("Voici les messages spéciaux auquels je peux répondre : \n -bonsoir \n -Bon VRG, j'arrête de t'améliorer pour aujourd'hui, à plus ! ( Freez seulement ) \n Si des personnes aident au développement \n ils auront un message spécial qui apparaitra ici.");
+    }
+
     if (message.content.startsWith(prefix + "Admin")){
-        if(message.author.id == "330077877599207445"){
+        if(message.author.id == "449251922612846593"){
             var embed = new Discord.RichEmbed()
                 .setTitle("Commandes des Admins")
                 .setDescription("Voici les commandes réalisables par les admins")
                 .addField("*CFUS","Explique comment créer un sondage", true)
                 .addField("*Sondage","Permet de créer un sondage dans : Rue de la presse", true)
                 .addField("*Sondage3","Permet de créer un sondage avec 3 possibilitées de réponse.", true)
+                .addField("*JDQS","Montre les messages spéciaux auquels je peux répondre.", true)
                 .setColor("0xB40431")
                 .setFooter("Les commandes ci-dessus sont réalisables par les admins")
             message.guild.channels.get('421678453050441738').sendEmbed(embed)
@@ -103,7 +112,7 @@ bot.on('message', message => {
     }}
 
     if (message.content === "Salut"){
-        message.channel.send("Salut moi c'est VRG BOT");
+        message.channel.send("Salut !");
     }
 
     if (message.content === "black squad"){
@@ -111,7 +120,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "coucou"){
-        message.channel.send("Coucou mon p'tit oréo (même si c'est dégueu)");
+        message.channel.send("Coucou mon p'tit oréo -_-");
     }
 
     if (message.content === "youki"){
@@ -147,7 +156,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "re"){
-        message.channel.send("Rebonsoère mon poulet");
+        message.channel.send("Rebonsouère mon poulet");
     }
 
     if (message.content === "vocal"){
@@ -179,7 +188,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "cc"){
-        message.reply(" slt");
+        message.reply(", slt");
     }
 
     if (message.content === "tg"){
@@ -187,11 +196,11 @@ bot.on('message', message => {
     }
 
     if (message.content === "qui bs ?"){
-        message.reply(" j'avoue ouais les gars qui bs ?");
+        message.reply(", j'avoue ouais les gars qui bs ?");
     }
 
     if (message.content === "qui bs"){
-        message.reply(" t'as raisons là qui bs ?");
+        message.reply(", t'as raisons là qui bs ?");
     }
 
     if (message.content === "ya quelqu'un ?"){
@@ -263,7 +272,7 @@ bot.on('message', message => {
     }
 
     if (message.content === "bon jy go"){
-        message.reply(" ok on s'reverra plus tard !");
+        message.reply(", ok on s'reverra plus tard !");
     }
 
     if (message.content === "je deco"){
@@ -305,6 +314,10 @@ bot.on('message', message => {
             return message.reply("Nan mais c'est pas toi qui me code... ;-;")
     }}
 
+    break;
+    case "serverlist":
+    message.channel.send(bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
+    
     if (message.content === prefix + "Help"){
         var embed = new Discord.RichEmbed()
             .setTitle("Commandes VRG BOT")
@@ -314,6 +327,7 @@ bot.on('message', message => {
             .addField("*Creator","Affiche le pseudo de mon créateur", true)
             .addField("*Napidou","Envoie le lien de la chaîne de Napidou !", true)
             .addField("*Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
+            .addField("*Freez","Envoie le lien de la chaine de Freez !", true)
             .addField("*Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.")
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
