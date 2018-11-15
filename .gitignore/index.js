@@ -314,9 +314,9 @@ bot.on('message', message => {
             return message.reply("Nan mais c'est pas toi qui me code... ;-;")
     }}
 
-    break;
-    case "serverlist":
-    message.channel.send(bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
+    if (message.content === "serverlist":
+        message.channel.send(bot.guilds.map(r => r.name + ` | **${r.memberCount}** membres`))
+    )
     
     if (message.content === prefix + "Help"){
         var embed = new Discord.RichEmbed()
