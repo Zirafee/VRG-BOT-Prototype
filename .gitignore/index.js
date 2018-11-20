@@ -1,6 +1,16 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+npm install lowdb
+
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+
+const adapter = new FileSync('database.json');
+const db = low(adapter);
+
+db.defaults({ histoires: [], xp: []}).write()
+
 var prefix = ("*")
 
 bot.on('ready', function() {
@@ -12,14 +22,14 @@ bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
 
-    if (message.content === prefix + "Infodiscord"){
+    if (message.content === prefix + "Infoserveur"){
         var embed = new Discord.RichEmbed()
-            .setTitle("Info Discord")
-            .setDescription("Voici les informations Discord")
-            .addField("Nom Du Discord", message.guild.name)
+            .setTitle("Info du serveur")
+            .setDescription("Voici les informations du serveur Discord Vin Rage Gaming")
+            .addField("Nom Du Serveur", message.guild.name)
             .addField("Crée le", message.guild.createdAt)
             .addField("Tu as rejoins le", message.member.joinedAt)
-            .addField("Utilisateurs sur le Discord", message.guild.memberCount)
+            .addField("Utilisateurs sur le Serveur", message.guild.memberCount)
             .setColor("0xB40431")
         message.channel.sendEmbed(embed)
 
@@ -64,8 +74,18 @@ bot.on('message', message => {
                 return message.reply("Tu n'as pas la permission, désolé")
     }}
 
+    if (message.content === prefix + "Actus"){
+        var embed = new Discord.RichEmbed()
+            .setTitle("Page d'actualités")
+            .setDescription("Voici les actualités en ce moment")
+            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype P est l'une des plus grosses MAJS du bot \n Elle inclut un système d'XP automatique \n Une page d'actus \n Quelques répliques et des bugs furent corrigés.", true)
+            .addField("Salon TEST","Le salon test a été crée alors n'hésitez pas à venir aider à l'avancer de VRG BOT \n Les personnes qui auront aidés receveront un grade spécial et une commande personnalisée.", true)
+            .setFooter("La page actus est mise à jour en même temps que le BOT alors allez checker de temps en temps.")
+        message.channel.sendEmbed(embed);
+    }
+
     if (message.content === prefix + "JDQ"){
-        message.channel.send("Voici ce à quoi je peux répondre: \n -Salut    /   -salut \n -yop    /   -black squad \n -coucou    /   -youki \n -sava    /   -ca va \n -ca va?    /   -sava? \n -hey   /    -hello \n -cava   /    -re \n -vocal    /   -voc \n -xxrom    /   -vw974 \n -pk    /   -tu joues \n -pomme    /   -cc \n -tg    /   -qui bs ? \n -qui bs    /   -ya quelqu'un ? \n -ui    /   -moi \n -napidou ?    /   -aie \n -qui unturned?    /   -yop qui unturned? \n -k    /   -ohw \n -oh ok    /   -toi tg \n -toi tg ptn     /  -toi ftg \n -toi ftg ptn    /   -ptn \n -je mange    /   -ok je mange \n -bon jy go    /   -salut VRG \n -youkouk    /   -YoukYouk \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
+        message.channel.send("Voici ce à quoi je peux répondre: \n -Salut -salut \n -yop -black squad \n -coucou -youki \n -sava -ca va \n -ca va? -sava? \n -hey -hello \n -cava -re \n -vocal -voc \n -xxrom -vw974 \n -pk -tu joues \n -pomme -cc \n -tg -qui bs ? \n -qui bs -ya quelqu'un ? \n -ui -moi \n -napidou ? -aie \n -qui unturned? -yop qui unturned? \n -k -ohw \n -oh ok -toi tg \n -toi tg ptn -toi ftg \n -toi ftg ptn -ptn \n -je mange -ok je mange \n -bon jy go -salut VRG \n -youkouk -YoukYouk \n -pas moi -omg \n -waow -woaw \n -wow \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
     }
 
     if (message.content === prefix + "Creator"){
@@ -96,7 +116,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(prefix + "Admin")){
-        if(message.author.id == "449251922612846593"){
+        if(message.author.id == "330077877599207445"){
             var embed = new Discord.RichEmbed()
                 .setTitle("Commandes des Admins")
                 .setDescription("Voici les commandes réalisables par les admins")
@@ -307,13 +327,33 @@ bot.on('message', message => {
         message.reply("salut ! Sinon qui bs avec toi ?");
     }
 
+    if (message.content === "pas moi"){
+        message.channel.send("moi non plus");
+    }
+
+    if (message.content === "omg"){
+        message.channel.send("AUMIGAUDE");
+    }
+
+    if (message.content === "waow"){
+        message.channel.send("woaw")
+    }
+
+    if (message.content === "woaw"){
+        message.channel.send("waow")
+    }
+
+    if (message.content === "wow"){
+        message.channel.send("WOUW")
+    }
+
     if (message.content === "Bon VRG, j'arrête de t'améliorer pour aujourd'hui, à plus !"){
         if(message.author.id == "449251922612846593"){
             message.channel.send("Ok Freez c'était cool mais oublie pas de te laver les mains avant de me toucher la prochaine fois elles étaient sales ! Sinon à plus !");
         }else{
             return message.reply("Nan mais c'est pas toi qui me code... ;-;")
     }}
-    
+
     if (message.content === prefix + "Help"){
         var embed = new Discord.RichEmbed()
             .setTitle("Commandes VRG BOT")
@@ -324,11 +364,41 @@ bot.on('message', message => {
             .addField("*Napidou","Envoie le lien de la chaîne de Napidou !", true)
             .addField("*Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
             .addField("*Freez","Envoie le lien de la chaine de Freez !", true)
-            .addField("*Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.")
+            .addField("*Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.", true)
+            .addField("*Infoserveur","Cette commande permet de savoir la date de création du serveur, le nombre de membres et le jour où tu as rejoins.", true)
+            .addField("*xp","Cette commande permet de voir ou en est ton xp dans ce serveur.", true)
+            .addField("*Actus","Avec cette commande tu peux voir les actus du moment à propos du serveur voir même plus.", true)
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
     }
+
+    var msgauthor = message.author.id;
+
+    if(message.author.bot)return;
+
+    if(!db.get("xp").find({user: msgauthor}).value()){
+        db.get("xp").push({user: msgauthor, xp: 1}).write();
+    }else{
+        var userxpdb = db.get("xp").filter({user: msgauthor}).find('xp').value();
+        console.log(userxpdb);
+        var userxp = Object.values(userxpdb)
+        console.log(userxp)
+        console.log(`Nombre d'xp: ${userxp[1]}`)
+
+        db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
+
+    if (message.content === prefix + "xp"){
+        var xp = db.get("xp").filter({user: msgauthor}).find('xp').value()
+        var xpfinal = Object.values(xp);
+        var xp_embed = new Discord.RichEmbed()
+            .setTitle(`Points d'XP de ${message.author.username}`)
+            .setColor("0xB40431")
+            .setDescription("Affichage des points d'XP")
+            .addField("XP:",`${xpfinal[1]} XP`)
+            .setFooter("Envoyer des messages permet de gagner de l'XP, mais attention ! Pas de SPAM !")
+        message.channel.send({embed: xp_embed});
+    }}
 })
 
 bot.on('guildMemberAdd', member => {
