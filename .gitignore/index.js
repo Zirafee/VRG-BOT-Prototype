@@ -1,16 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-npm install lowdb
-
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-
-const adapter = new FileSync('database.json');
-const db = low(adapter);
-
-db.defaults({ histoires: [], xp: []}).write()
-
 var prefix = ("*")
 
 bot.on('ready', function() {
@@ -78,7 +68,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Page d'actualités")
             .setDescription("Voici les actualités en ce moment")
-            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype P est l'une des plus grosses MAJS du bot \n Elle inclut un système d'XP automatique \n Une page d'actus \n Quelques répliques et des bugs furent corrigés.", true)
+            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype P est l'une des plus grosses MAJS du bot \n Elle inclut un système d'XP automatique \n Une page d'actus \n Quelques répliques et des bugs furent corrigés. \n en fait le système d'xp a été retiré car le bot fut HS \n il sera peut-être remis dans le futur !", true)
             .addField("Salon TEST","Le salon test a été crée alors n'hésitez pas à venir aider à l'avancer de VRG BOT \n Les personnes qui auront aidés receveront un grade spécial et une commande personnalisée.", true)
             .setFooter("La page actus est mise à jour en même temps que le BOT alors allez checker de temps en temps.")
         message.channel.sendEmbed(embed);
@@ -372,33 +362,6 @@ bot.on('message', message => {
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
     }
-
-    var msgauthor = message.author.id;
-
-    if(message.author.bot)return;
-
-    if(!db.get("xp").find({user: msgauthor}).value()){
-        db.get("xp").push({user: msgauthor, xp: 1}).write();
-    }else{
-        var userxpdb = db.get("xp").filter({user: msgauthor}).find('xp').value();
-        console.log(userxpdb);
-        var userxp = Object.values(userxpdb)
-        console.log(userxp)
-        console.log(`Nombre d'xp: ${userxp[1]}`)
-
-        db.get("xp").find({user: msgauthor}).assign({user: msgauthor, xp: userxp[1] += 1}).write();
-
-    if (message.content === prefix + "xp"){
-        var xp = db.get("xp").filter({user: msgauthor}).find('xp').value()
-        var xpfinal = Object.values(xp);
-        var xp_embed = new Discord.RichEmbed()
-            .setTitle(`Points d'XP de ${message.author.username}`)
-            .setColor("0xB40431")
-            .setDescription("Affichage des points d'XP")
-            .addField("XP:",`${xpfinal[1]} XP`)
-            .setFooter("Envoyer des messages permet de gagner de l'XP, mais attention ! Pas de SPAM !")
-        message.channel.send({embed: xp_embed});
-    }}
 })
 
 bot.on('guildMemberAdd', member => {
