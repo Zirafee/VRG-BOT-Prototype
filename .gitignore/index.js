@@ -68,8 +68,8 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Page d'actualités")
             .setDescription("Voici les actualités en ce moment")
-            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype P est l'une des plus grosses MAJS du bot \n Elle inclut un système d'XP automatique \n Une page d'actus \n Quelques répliques et des bugs furent corrigés. \n en fait le système d'xp a été retiré car le bot fut HS \n il sera peut-être remis dans le futur !", true)
-            .addField("Salon TEST","Le salon test a été crée alors n'hésitez pas à venir aider à l'avancer de VRG BOT \n Les personnes qui auront aidés receveront un grade spécial et une commande personnalisée.", true)
+            .addField("Nouvelle MAJ de VRG :","La nouvelle MAJ de VRG intitulée: Prototype P est l'une des plus grosses MAJS du bot \n Elle inclut un système d'XP automatique \n Une page d'actus \n Quelques répliques et des bugs furent corrigés. \n en fait le système d'xp a été retiré car le bot fut HS \n il sera peut-être remis dans le futur !", true)
+            .addField("Salon TEST :","Le salon test a été crée alors n'hésitez pas à venir aider à l'avancer de VRG BOT \n Les personnes qui auront aidés receveront un grade spécial et une commande personnalisée.", true)
             .setFooter("La page actus est mise à jour en même temps que le BOT alors allez checker de temps en temps.")
         message.channel.sendEmbed(embed);
     }
@@ -356,7 +356,6 @@ bot.on('message', message => {
             .addField("*Freez","Envoie le lien de la chaine de Freez !", true)
             .addField("*Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.", true)
             .addField("*Infoserveur","Cette commande permet de savoir la date de création du serveur, le nombre de membres et le jour où tu as rejoins.", true)
-            .addField("*xp","Cette commande permet de voir ou en est ton xp dans ce serveur.", true)
             .addField("*Actus","Avec cette commande tu peux voir les actus du moment à propos du serveur voir même plus.", true)
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
