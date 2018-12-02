@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 var prefix = ("*")
 
 bot.on('ready', function() {
-    bot.user.setActivity("pour de l'aide: *Help");
+    bot.user.setActivity("mise à jour");
 });
 
 bot.login(process.env.TOKEN);
