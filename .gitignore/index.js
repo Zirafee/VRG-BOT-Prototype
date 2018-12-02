@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-var prefix = ("''")
+var prefix = (";;")
 var prefix2 = ("?")
 
 bot.on('ready', function() {
-    bot.user.setActivity("pour de l'aide: !Help");
+    bot.user.setActivity("pour de l'aide: ;;Help");
 });
 
 bot.login(process.env.TOKEN);
@@ -138,10 +138,10 @@ bot.on('message', message => {
             var embed = new Discord.RichEmbed()
                 .setTitle("Commandes des Admins")
                 .setDescription("Voici les commandes réalisables par les admins")
-                .addField("''CFUS","Explique comment créer un sondage", true)
-                .addField("''Sondage","Permet de créer un sondage dans : Rue de la presse", true)
-                .addField("''Sondage3","Permet de créer un sondage avec 3 possibilitées de réponse.", true)
-                .addField("''JDQS","Montre les messages spéciaux auquels je peux répondre.", true)
+                .addField(";;CFUS","Explique comment créer un sondage", true)
+                .addField(";;Sondage","Permet de créer un sondage dans : Rue de la presse", true)
+                .addField(";;Sondage3","Permet de créer un sondage avec 3 possibilitées de réponse.", true)
+                .addField(";;JDQS","Montre les messages spéciaux auquels je peux répondre.", true)
                 .setColor("0xB40431")
                 .setFooter("Les commandes ci-dessus sont réalisables par les admins")
             message.guild.channels.get('421678453050441738').sendEmbed(embed)
@@ -421,16 +421,16 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Commandes VRG BOT")
             .setDescription("Voici les commandes que je peux effectué:")
-            .addField("''Help","Affiche cette page d'aide", true)
+            .addField(";;Help","Affiche cette page d'aide", true)
             .addField("?Help","Affiche la page d'aide des commandes à propos des questions", true)
-            .addField("''JDQ","Affiche les répliques que je peux dire", true)
-            .addField("''Creator","Affiche le pseudo de mon créateur", true)
-            .addField("''Napidou","Envoie le lien de la chaîne de Napidou !", true)
-            .addField("''Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
-            .addField("''Freez","Envoie le lien de la chaine de Freez !", true)
-            .addField("''Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.", true)
-            .addField("''Infoserveur","Cette commande permet de savoir la date de création du serveur, le nombre de membres et le jour où tu as rejoins.", true)
-            .addField("''Actus","Avec cette commande tu peux voir les actus du moment à propos du serveur voir même plus.", true)
+            .addField(";;JDQ","Affiche les répliques que je peux dire", true)
+            .addField(";;Creator","Affiche le pseudo de mon créateur", true)
+            .addField(";;Napidou","Envoie le lien de la chaîne de Napidou !", true)
+            .addField(";;Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
+            .addField(";;Freez","Envoie le lien de la chaine de Freez !", true)
+            .addField(";;Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.", true)
+            .addField(";;Infoserveur","Cette commande permet de savoir la date de création du serveur, le nombre de membres et le jour où tu as rejoins.", true)
+            .addField(";;Actus","Avec cette commande tu peux voir les actus du moment à propos du serveur voir même plus.", true)
             .addField("?QRDB","Avec cette commande tu pourras savoir quel questions posé au BOT pour qu'il te réponde !", true)
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
