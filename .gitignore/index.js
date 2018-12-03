@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-var prefix = (";;")
+var prefix = ("*")
 var prefix2 = ("?")
 
 bot.on('ready', function() {
-    bot.user.setActivity("pour de l'aide: ;;Help");
+    bot.user.setActivity("pour de l'aide: *Help");
 });
 
 bot.login(process.env.TOKEN);
@@ -44,7 +44,7 @@ bot.on('message', message => {
                 return message.reply("Tu n'as pas la permission, désolé")
     }}
 
-    if (message.content.startsWith(prefix + "Sondage3")){
+    if (message.content.startsWith(prefix + "Sond3")){
         if(message.author.id == "330077877599207445"){
             let args = message.content.split(" ").slice(1);
             let thingToEcho = args.join(" ")
@@ -64,12 +64,18 @@ bot.on('message', message => {
                 return message.reply("Tu n'as pas la permission, désolé")
     }}
 
+    if (message.content.startsWith(prefix + "Pub")){
+        let args = message.content.split(" ").slice(1);
+        let thingToEcho = args.join(" ")
+        message.channel.send("Une nouvelle vidéo à aller voir ici les gars :" thingToEcho)
+    }
+
     if (message.content === prefix + "Actus"){
         var embed = new Discord.RichEmbed()
             .setTitle("Page d'actualités")
             .setDescription("Voici les actualités en ce moment")
-            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype V est une  grosse MAJ \n Elle inclut des nouvelles commande \n On peut lui poser des questions \n Quelques répliques et des bugs furent corrigés. \n Plein d'autres trucs à découvrir en lui parlant !", true)
-            .addField("Les Rôles","Le BOT peut maintenant expliquer les rôles du serveur avec une simple commande \n Allez voir dans ''Help pour plus d'infos !", true)
+            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype W est une petite MAJ \n Elle inclut des nouvelles commandes comme : ~ *Pub à décourvir avec la commande *CFSP et une autre commande Admin. \n Quelques répliques et des bugs furent corrigés. \n Plein d'autres trucs à découvrir en lui parlant !", true)
+            .addField("Les Rôles","Le BOT peut maintenant expliquer plus de rôles qu'avant toujours avec la même commande \n Allez voir dans *Help pour plus d'infos !", true)
             .setFooter("La page actus est mise à jour en même temps que le BOT alors allez checker de temps en temps.")
         message.channel.sendEmbed(embed);
     }
@@ -95,12 +101,28 @@ bot.on('message', message => {
             .addField("Nouveaux","Pour ceux qui viennent d'arriver dans le serveur et qui connaissent pas trop", true)
             .addField("Habitants","L'habitant connaît le serveur il y séjourne depuis un bout de temps \n il habite traquillement.", true)
             .addField("Citoyens","Les citoyens connaissent bien le serveur ils y sont depuis un long moment \n il on plus de responsabilitées au sein du serveur comme payé leur factures", true)
+            .addField("Police","La police est là pour faire respecter le règlement du serveur \n et bannir les éléments perturbateurs", true)
+            .addField("Vips","Les Vips sont les stars du serveur mais peu de personnes possèdent ce rôle", true)
+            .addField("Gouverneur","Le gouverneur est le bras droit du dirigeant il l'assiste dans ses choix \n et le remplace lorsqu'il est absent", true)
+            .addField("Secretaire","Le secretaire est un rôle bien mystérieux, c'est le bars gauche du dirigeant \n mais il est tellement discret qu'on en sait pas plus", true)
             .addField("Informaticien","L'informaticien est celui qui s'occupe des BOTs du serveur \n il est souvent avec le dirigeant pour pouvoir remplir sa petite sacochette d'idées", true)
             .addField("Dirigeant","Il possède les pleins pouvoirs sur le serveur \n il peut tout faire et tout voir il dirige et guide le serveur vers le droit chemin \n non je suis pas payé pour lui lécher les bottes !", true)
-            .setFooter("Il y d'autres rôles dans le serveur mais comme il n'apparaissent pas tous \n je n'ai pas trouvé utile de les mettres mais il seront peut-être présent dans d'autres MAJs !")
+            .addField("~ Les rôles spéciaux ~", true)
+            .addField("Testeurs","Testeurs est un rôle éphémère qui sert à accèder au salon test \n il permet d'aider au développement du BOT et si il fait bien son taff il devient VRG Helper", true)
+            .addField("VRG Helper","Ce rôle est donné au personne ayant aidés au développement de VRG BOT \n Merci à eux !", true)
+            .addField("Amis","Seul Napidou sait vraiment se que ce rôle signifie \n un rôle bien spécial et mystèrieux !", true)
+            .addField("Graffeur-Styliste","Rôle éphémère donné à ceux qui ont aidés Napidou à crée un design novateur pour ses projets", true)
+            .setFooter("Et toi t'as quel rôle ?")
             .setColor("0xB40431")
         message.channel.sendEmbed(embed);
     }
+
+    if (message.content === prefix + "Debug"){
+        if(message.author.id == "449251922612846593"){
+            message.channel.send("Les changements de la version 15.75 : \n \n ~ Changement de prefix de ;; à * \n ~ Commande *Debug \n ~ Nouveaux rôles dans l'embed \n ~ Commande pour pouvoir envoyer un lien vers sa nouvelle vidéo \n \n A faire pour la prochaien MAJ : \n \n ~ Intégrer la chaîne de xxrom \n ~ Images randoms dans rue de la presse \n ~ corriger des bugs \n \n Cio Freez !")
+        }else{
+            return message.reply("Tu n'as pas accès au debug de la version 15.75, désolé.")
+    }}
 
     if (message.content === prefix + "JDQ"){
         message.channel.send("Voici ce à quoi je peux répondre: \n -Salut -salut \n -yop -black squad \n -coucou -youki \n -sava -ca va \n -ca va? -sava? \n -hey -hello \n -cava -re \n -vocal -voc \n -xxrom -vw974 \n -pk -tu joues \n -pomme -cc \n -tg -qui bs ? \n -qui bs -ya quelqu'un ? \n -ui -moi \n -napidou ? -aie \n -qui unturned? -yop qui unturned? \n -k -ohw \n -oh ok -toi tg \n -toi tg ptn -toi ftg \n -toi ftg ptn -ptn \n -je mange -ok je mange \n -bon jy go -salut VRG \n -youkouk -YoukYouk \n -pas moi -omg \n -waow -woaw \n -wow \n -K -L \n \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
@@ -133,15 +155,20 @@ bot.on('message', message => {
         message.channel.send("Voici les messages spéciaux auquels je peux répondre : \n -bonsoir \n -Bon VRG, j'arrête de t'améliorer pour aujourd'hui, à plus ! ( Freez seulement ) \n Si des personnes aident au développement \n ils auront un message spécial qui apparaitra ici.");
     }
 
+    if (message.content === prefix + "CFSP"){
+        message.channel.send("Pour faire ta pub c'est simple tu as juste a écrire : *Pub puis ensuite tu mets le lien de ta pub genre une vidéo YouTube \n \n Attention, tu dois envoyer ça dans le salon rue de la presse !")
+    }
+    
     if (message.content.startsWith(prefix + "Admin")){
         if(message.author.id == "330077877599207445"){
             var embed = new Discord.RichEmbed()
                 .setTitle("Commandes des Admins")
                 .setDescription("Voici les commandes réalisables par les admins")
-                .addField(";;CFUS","Explique comment créer un sondage", true)
-                .addField(";;Sondage","Permet de créer un sondage dans : Rue de la presse", true)
-                .addField(";;Sondage3","Permet de créer un sondage avec 3 possibilitées de réponse.", true)
-                .addField(";;JDQS","Montre les messages spéciaux auquels je peux répondre.", true)
+                .addField("*CFUS","Explique comment créer un sondage", true)
+                .addField("*Sondage","Permet de créer un sondage dans : Rue de la presse", true)
+                .addField("*Sond3","Permet de créer un sondage avec 3 possibilitées de réponse.", true)
+                .addField("*JDQS","Montre les messages spéciaux auquels je peux répondre.", true)
+                .addField("*Debug","Affiche le debug de la dernière version", true)
                 .setColor("0xB40431")
                 .setFooter("Les commandes ci-dessus sont réalisables par les admins")
             message.guild.channels.get('421678453050441738').sendEmbed(embed)
@@ -325,7 +352,7 @@ bot.on('message', message => {
         message.channel.send("Oh tiens tu m'appelles par mon nom ? :)");
     }
 
-    if (message.content === "@VRG BOT#3883"){
+    if (message.content === "@VRG Prototype W (V.15.75)"){
         message.channel.send("Oui, je suis là !");
     }
 
@@ -421,17 +448,17 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Commandes VRG BOT")
             .setDescription("Voici les commandes que je peux effectué:")
-            .addField(";;Help","Affiche cette page d'aide", true)
-            .addField("?Help","Affiche la page d'aide des commandes à propos des questions", true)
-            .addField(";;JDQ","Affiche les répliques que je peux dire", true)
-            .addField(";;Creator","Affiche le pseudo de mon créateur", true)
-            .addField(";;Napidou","Envoie le lien de la chaîne de Napidou !", true)
-            .addField(";;Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
-            .addField(";;Freez","Envoie le lien de la chaine de Freez !", true)
-            .addField(";;Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.", true)
-            .addField(";;Infoserveur","Cette commande permet de savoir la date de création du serveur, le nombre de membres et le jour où tu as rejoins.", true)
-            .addField(";;Actus","Avec cette commande tu peux voir les actus du moment à propos du serveur voir même plus.", true)
+            .addField("*Help","Affiche cette page d'aide", true)
+            .addField("*JDQ","Affiche les répliques que je peux dire", true)
+            .addField("*Creator","Affiche le pseudo de mon créateur", true)
+            .addField("*Napidou","Envoie le lien de la chaîne de Napidou !", true)
+            .addField("*Website","Envoie le lien du site officiel de développement de VRG BOT.", true)
+            .addField("*Freez","Envoie le lien de la chaine de Freez !", true)
+            .addField("*Admin","Cette commande montre les commandes que les admins peuvent effectué dans le salon des admins, commande réalisable par Napidou uniquement.", true)
+            .addField("*Infoserveur","Cette commande permet de savoir la date de création du serveur, le nombre de membres et le jour où tu as rejoins.", true)
+            .addField("*Actus","Avec cette commande tu peux voir les actus du moment à propos du serveur voir même plus.", true)
             .addField("?QRDB","Avec cette commande tu pourras savoir quel questions posé au BOT pour qu'il te réponde !", true)
+            .addField("*CFSP","Cette commande t'explique comme faire ta pub", true)
             .setColor("0xB40431")
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
