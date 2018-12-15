@@ -476,22 +476,20 @@ bot.on('message', message => {
 if (command === "kick") {
     let modRole = message.guild.roles.find("name", "Owner");
     if(!message.member.roles.has(modRole.id)) {
-        return message.reply("Désolé tu ne peux pas kick ...").catch(console.error);
+        return message.reply("Désolé tu ne peux pas kick ...");
     }
 
     if(message.mentions.user.size === 0) {
-        return message.reply("Merci de mentionner l'utilisateur à expulser.").catch(console.error);
+        return message.reply("Merci de mentionner l'utilisateur à expulser.");
     }
     let kickMember = message.guild.member(message.mentions.users.first());
     if(!kickMember) {
         return message.reply("Cet utilisateur est introuvable ou impossible à expulser.")
     }
     if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
-        return message.reply("Je n'ai pas la perimission KICK_MEMBERS pour faire ceci.").catch(console.error);
+        return message.reply("Je n'ai pas la perimission KICK_MEMBERS pour faire ceci.");
     }
     kickMember.kick().then(member => {
-        message.reply(`**${member.user.username}** a été expulsé par **${message.author.username}**`).catch(console.error);
-    }).catch(console.error)
-}})
-
-});
+        message.reply(`**${member.user.username}** a été expulsé par **${message.author.username}**`);
+    })
+}});
