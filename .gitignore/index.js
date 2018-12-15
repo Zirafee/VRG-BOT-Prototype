@@ -79,6 +79,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Commandes questions")
             .setDescription("Voici les commandes pour avoir les réponses à vos questions")
+            .addField("?LCS","Pour connaître une commande secrète !", true)
             .addField("?Roles","Les rôles du serveur n'auront plus aucun secret", true)
             .addField("?afk","que signifie : AFK ?", true)
             .addField("?wp","que signifie : WP ?", true)
@@ -122,6 +123,9 @@ bot.on('message', message => {
     if (message.content === prefix + "JDQ"){
         message.channel.send("Voici ce à quoi je peux répondre: \n -Salut -salut \n -yop -black squad \n -coucou -youki \n -sava -ca va \n -ca va? -sava? \n -hey -hello \n -cava -re \n -vocal -voc \n -xxrom -vw974 \n -pk -tu joues \n -pomme -cc \n -tg -qui bs ? \n -qui bs -ya quelqu'un ? \n -ui -moi \n -napidou ? -aie \n -qui unturned? -yop qui unturned? \n -k -ohw \n -oh ok -toi tg \n -toi tg ptn -toi ftg \n -toi ftg ptn -ptn \n -je mange -ok je mange \n -bon jy go -salut VRG \n -youkouk -YoukYouk \n -pas moi -omg \n -waow -woaw \n -wow \n -K -L \n \n - Le BOT peut aussi répondre à d'autre messages \n mais ils n'apparraissent pas ici \n car ils sont secrets !");
     }
+
+    if (message.content === prefix2 + "LCS"){
+        message.channel.send("Voici la seule et unique commande secrète : \n \n - Napiversaire \n \n Cette commande est à effectuer le 14 Décembre")
 
     if (message.content === prefix + "Creator"){
         message.channel.send("Mon créateur est Le Ptit Freez, le projet est supervisé par Napidou.");
@@ -189,6 +193,10 @@ bot.on('message', message => {
 
     if (message.content === "sava"){
         message.channel.send("Ta gueule et mange !");
+    }
+
+    if (message.content === "Napiversaire"){
+        message.channel.send(`*Bon anniversaire* **Napidou** ! *Weeeeeeee !* De la part de **${message.author.username}** !`);
     }
 
     if (message.content === "ca va"){
@@ -347,7 +355,7 @@ bot.on('message', message => {
         message.channel.send("Oh tiens tu m'appelles par mon nom ? :)");
     }
 
-    if (message.content === "@VRG Prototype W (V.15.75)"){
+    if (message.content === "@VRG Prototype Y (V.16.80)"){
         message.channel.send("Oui, je suis là !");
     }
 
@@ -384,12 +392,18 @@ bot.on('message', message => {
     }
 
     if (message.content === "waow"){
-        message.channel.send("woaw")
-    }
+        if(message.author.id == "510556566706192394"){
+            message.channel.send("Fabuleux")
+        }else{
+            return message.reply("woaw")
+    }}
 
     if (message.content === "woaw"){
-        message.channel.send("waow")
-    }
+        if(message.author.id == "510556566706192394"){
+            message.channel.send("Magnifique")
+        }else{
+            return message.reply("waow")
+    }}
 
     if (message.content === "wow"){
         message.channel.send("WOUW")
@@ -460,36 +474,10 @@ bot.on('message', message => {
 })
 
 bot.on('guildMemberAdd', member => {
-    bot.channels.get('374964719884435469').send(`Bienvenue à toi **${member.user.username}** mais tu peux retirer tes chaussures stp ?`);
+    bot.channels.get('374964719884435469').send(`Bienvenue à toi **${member}** mais tu peux retirer tes chaussures stp ?`);
 })
 
 bot.on('guildMemberRemove', member => {
     bot.channels.get('374964719884435469').send(`Bah voilà **${member.user.username}** est parti, moi je l'aimais bien mais bon ...`)
 
-})
-
-bot.on('message', message => {
-    let command = message.content.split(" ")[0];
-    const args = message.content.slice(prefix.length).split(/ +/);
-    command = args.shift().toLowerCase();
-
-if (command === "kick") {
-    let modRole = message.guild.roles.find("name", "Owner");
-    if(!message.member.roles.has(modRole.id)) {
-        return message.reply("Désolé tu ne peux pas kick ...");
-    }
-
-    if(message.mentions.user.size === 0) {
-        return message.reply("Merci de mentionner l'utilisateur à expulser.");
-    }
-    let kickMember = message.guild.member(message.mentions.users.first());
-    if(!kickMember) {
-        return message.reply("Cet utilisateur est introuvable ou impossible à expulser.")
-    }
-    if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
-        return message.reply("Je n'ai pas la perimission KICK_MEMBERS pour faire ceci.");
-    }
-    kickMember.kick().then(member => {
-        message.reply(`**${member.user.username}** a été expulsé par **${message.author.username}**`);
-    })
-}});
+});
