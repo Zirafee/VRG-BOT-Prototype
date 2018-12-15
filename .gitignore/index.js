@@ -44,6 +44,7 @@ bot.on('message', message => {
                 return message.reply("Tu n'as pas la permission, désolé")
     }}
 
+
     if (message.content.startsWith(prefix + "Sond3")){
         if(message.author.id == "330077877599207445"){
             let args = message.content.split(" ").slice(1);
@@ -68,7 +69,7 @@ bot.on('message', message => {
         var embed = new Discord.RichEmbed()
             .setTitle("Page d'actualités")
             .setDescription("Voici les actualités en ce moment")
-            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype W est une petite MAJ \n Elle inclut une nouvelle commande Admin. \n Quelques répliques et des bugs furent corrigés. \n Plein d'autres trucs à découvrir en lui parlant !", true)
+            .addField("Nouvelle MAJ de VRG","La nouvelle MAJ de VRG intitulée: Prototype W est une petite MAJ \n Elle inclut des nouvelles commandes comme : ~ *Pub à décourvir avec la commande *CFSP et une autre commande Admin. \n Quelques répliques et des bugs furent corrigés. \n Plein d'autres trucs à découvrir en lui parlant !", true)
             .addField("Les Rôles","Le BOT peut maintenant expliquer plus de rôles qu'avant toujours avec la même commande \n Allez voir dans *Help pour plus d'infos !", true)
             .setFooter("La page actus est mise à jour en même temps que le BOT alors allez checker de temps en temps.")
         message.channel.sendEmbed(embed);
@@ -113,9 +114,9 @@ bot.on('message', message => {
 
     if (message.content === prefix + "Debug"){
         if(message.author.id == "449251922612846593"){
-            message.channel.send("Les changements de la version 15.76 : \n \n ~ Changement de prefix de ;; à * \n ~ Commande *Debug \n ~ Nouveaux rôles dans l'embed \n ~ Commande pour pouvoir envoyer un lien vers sa nouvelle vidéo \n \n A faire pour la prochaien MAJ : \n \n ~ Intégrer la chaîne de xxrom \n ~ Images randoms dans rue de la presse \n ~ corriger des bugs \n \n Cio Freez !")
+            message.channel.send("Les changements de la version 15.75 : \n \n ~ Changement de prefix de ;; à * \n ~ Commande *Debug \n ~ Nouveaux rôles dans l'embed \n ~ Commande pour pouvoir envoyer un lien vers sa nouvelle vidéo \n \n A faire pour la prochaien MAJ : \n \n ~ Intégrer la chaîne de xxrom \n ~ Images randoms dans rue de la presse \n ~ corriger des bugs \n \n Cio Freez !")
         }else{
-            return message.reply("Tu n'as pas accès au debug de la version 15.76, désolé.")
+            return message.reply("Tu n'as pas accès au debug de la version 15.75, désolé.")
     }}
 
     if (message.content === prefix + "JDQ"){
@@ -459,10 +460,38 @@ bot.on('message', message => {
 })
 
 bot.on('guildMemberAdd', member => {
-    bot.channels.get('374964719884435469').send(`Bienvenue à toi ${member} mais tu peux retirer tes chaussures stp ?`);
+    bot.channels.get('374964719884435469').send(`Bienvenue à toi **${member.user.username}** mais tu peux retirer tes chaussures stp ?`);
 })
 
 bot.on('guildMemberRemove', member => {
-    bot.channels.get('374964719884435469').send(`Bah voilà ${member} est parti, moi je l'aimais bien mais bon ...`)
+    bot.channels.get('374964719884435469').send(`Bah voilà **${member.user.username}** est parti, moi je l'aimais bien mais bon ...`)
+
+})
+
+bot.on('message', message => {
+    let command = message.content.split(" ")[0];
+    const args = message.content.slice(prefix.length).split(/ +/);
+    command = args.shift().toLowerCase();
+
+if (command === "kick") {
+    let modRole = message.guild.roles.find("name", "Owner");
+    if(!message.member.roles.has(modRole.id)) {
+        return message.reply("Désolé tu ne peux pas kick ...").catch(console.error);
+    }
+
+    if(message.mentions.user.size === 0) {
+        return message.reply("Merci de mentionner l'utilisateur à expulser.").catch(console.error);
+    }
+    let kickMember = message.guild.member(message.mentions.users.first());
+    if(!kickMember) {
+        return message.reply("Cet utilisateur est introuvable ou impossible à expulser.")
+    }
+    if(!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
+        return message.reply("Je n'ai pas la perimission KICK_MEMBERS pour faire ceci.").catch(console.error);
+    }
+    kickMember.kick().then(member => {
+        message.reply(`**${member.user.username}** a été expulsé par **${message.author.username}**`).catch(console.error);
+    }).catch(console.error)
+}})
 
 });
