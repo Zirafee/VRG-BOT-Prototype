@@ -126,6 +126,7 @@ bot.on('message', message => {
 
     if (message.content === prefix2 + "LCS"){
         message.channel.send("Voici la seule et unique commande secrète : \n \n - Napiversaire \n \n Cette commande est à effectuer le 14 Décembre")
+    }
 
     if (message.content === prefix + "Creator"){
         message.channel.send("Mon créateur est Le Ptit Freez, le projet est supervisé par Napidou.");
@@ -145,10 +146,6 @@ bot.on('message', message => {
         }else{
             return message.reply("Désolé mais tu ne peux pas exécuter cette commande. ;-;")
     }}
-
-    if (message.content === prefix + "Website"){
-        message.channel.send("Voici le site [VRG BOT Official Development WebSite](https://vrg-bot-official-development-website-76.webself.net/accueil)");
-    }
 
     if (message.content === prefix + "JDQS"){
         message.channel.send("Voici les messages spéciaux auquels je peux répondre : \n -bonsoir \n -Bon VRG, j'arrête de t'améliorer pour aujourd'hui, à plus ! ( Freez seulement ) \n Si des personnes aident au développement \n ils auront un message spécial qui apparaitra ici.");
@@ -471,7 +468,7 @@ bot.on('message', message => {
             .setFooter("D'autres fonctionnalités seront instaurées dans le futur")
         message.channel.sendEmbed(embed);
     }
-})
+}))
 
 bot.on('guildMemberAdd', member => {
     bot.channels.get('374964719884435469').send(`Bienvenue à toi **${member}** mais tu peux retirer tes chaussures stp ?`);
